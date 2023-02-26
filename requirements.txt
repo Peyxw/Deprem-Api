@@ -1,0 +1,6 @@
+gunicorn
+schedule
+autopep8
+beautifulsoup4
+flask
+
