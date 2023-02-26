@@ -1,35 +1,97 @@
-# Canlı-Deprem-Haritası
-Canlı Deprem Haritası usgs deprem verilerini kullanarak Türkiye üzerinde olan depremleri python ile işleyip harita üzerinde kullanıcılara sunan bir program.<br>
-Canlı Deprem Haritası merkez üssü Kahramanmaraşta yaşanan 7 büyüklüğündeki depremin anısına oluşturulmuştur.
-## Görseller
-![](resim1.png)<br>
-Görseldeki harita ve altta bulunan depremler kendini güncellemektedir.
+# Deprem-Api
+Deprem-Api tercihe göre AFAD veya Kandilli Rasatanesi`nin deprem verilerini işliyerek. Türkiye üzerinde olan depremleri JSON formatı üzerinden halka sunar.<br>
+
+
 
 
 ## Özellikler
-- Harita üzerinde fay hatları.
-- Harita üzerinde dakikalık deprem bilgisi.
-- Dakikalık depremlerin büyüklükleri,yerleri vb.
+- USGS sistemin kullandığı parametleri kullanır.
+- Düzenlene bilir
+- Filtreleme yapar
 - 1 Dakika aralıklar ile güncellenen deprem verileri.
 
 ## Kurulum
 ```py
-pip install folium
-pip install pandas
-pip install time
-pip install requests
-pip install geopandas
-pip install os
-pip install webbrowser
-pip install keyboard
+pip install gunicorn
+pip install schedule
+pip install autopep8
+pip install beautifulsoup4
+pip install flask
+
 ```
 # Kullanım
+Bu kullanım yönergesi kendi bilgisayarınıza kurmanız için oluşturuldu
 ```py
-python3 depremler.py
-python3 index2.py
+py index.html
+
 ```
-Ayrı komut pencerelerinde başlatınız.<br>
-Her iki komut penceresindede **Çalışıyor** Yazısını gördükten sonra **Site/index.html** Sayfasını aça bilirsiniz.
+Sistem çalıştığı zaman sizlere bir internet adresi verecektir ordan giriş sağlıya bilirsiniz.
+
+###JSON Çıktısı
+```json
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generated": "null",
+    "url": "null",
+    "title": "PEYXW DEPREM",
+    "status": 500,
+    "api": "1.0.0",
+    "count": 500
+  },
+  "features": [
+    {
+      "features": {
+        "type": "Feature",
+        "properties": {
+          "mag": {
+            "md": 0,
+            "ml": 1.8,
+            "mw": 0
+          },
+          "place": [
+            3.1,
+            "HACIKODAL-GOKSUN (KAHRAMANMARAS)"
+          ],
+          "time": 1677371367,
+          "updated": 1677371367,
+          "tz": "null",
+          "url": "null",
+          "detail": "null",
+          "felt": "null",
+          "cdi": "null",
+          "mmi": "null",
+          "alert": "null",
+          "status": "İlksel",
+          "tsunami": "0",
+          "sig": "0",
+          "net": "us",
+          "code": 0.11752361851974358,
+          "ids": 0.11752361851974358,
+          "sources": ",us,",
+          "types": ",origin,phase-data,",
+          "nst": "0",
+          "dmin": "0",
+          "rms": "0",
+          "gap": "0",
+          "magType": "mb",
+          "type": "earthquake",
+          "title": [
+            3.1,
+            "HACIKODAL-GOKSUN (KAHRAMANMARAS)"
+          ]
+        },
+        "geometry": "İlksel",
+        "coordinates": [
+          37.9418,
+          36.2945,
+          3.1
+        ],
+        "id": 0.11752361851974358
+      }
+    },
+```
+
 
 # Destek Talebi
 Her hanigi bir sorunuz veya takıldığınız bir yer var ise eminnesatg@gmail.com adresinden bana ulaşa bilir veya bir talep oluştura bilirsiniz.
@@ -38,10 +100,7 @@ Her hanigi bir sorunuz veya takıldığınız bir yer var ise eminnesatg@gmail.c
 Katkıda bulunmak için [Burayı](https://opensource.guide/tr/how-to-contribute/) gözden geçirerek katkıda buluna bilirsiniz.
 
 # Yol Haritası
--Arayüz geliştirilecek
--Kendi deprem api si geliştirilecek
-# Yazalar ve katkıda bulunanlar
-Peyxw
+**HER HANGİ BİR YOL HARİTASI BULUNMAMAKTA**
 # Lisans
 ``` 
 MIT License
